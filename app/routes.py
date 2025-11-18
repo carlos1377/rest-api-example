@@ -57,7 +57,7 @@ def put_product(
     if if_match:
         try:
             expected_version = int(if_match.strip('"'))
-        except:
+        except ValueError:
             pass
     try:
         p = svc.update(product_id, product, expected_version)
